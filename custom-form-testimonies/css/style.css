@@ -1,0 +1,479 @@
+[x-cloak]
+{
+    display: none !important;
+}
+
+/* CSS */
+
+.overlay-testimonies
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.overlay-testimonies:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.form-testimonies form
+{
+    max-width: 100%;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.form-testimonies .fields-row
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-testimonies .fields-row .field-control
+{
+    flex: 1 1 calc(50% - 20px);
+}
+
+@media (max-width: 600px)
+{
+    .form-testimonies .fields-row
+    {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-testimonies .fields-row .field-control
+    {
+        flex: 1 1 100%;
+    }
+}
+
+.form-testimonies .field-control
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-testimonies .field-control.field-control--less-margin
+{
+    margin-bottom: 5px;
+}
+
+.form-testimonies .field-control label
+{
+    font-size: 0.875em;
+    line-height: 0.875em;
+    color: #1F2937;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.form-testimonies .field-control label.current-required-field,
+.form-testimonies .field-control label span
+{
+    color: #EF4444;
+}
+
+.form-testimonies .field-control .checkbox-field
+{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.form-testimonies .field-control .checkbox-field label.current-required-field
+{
+    text-decoration: underline;
+}
+
+.form-testimonies input:not([type]),
+.form-testimonies input[type="text"]:not(.browser-default),
+.form-testimonies input[type="password"]:not(.browser-default),
+.form-testimonies input[type="email"]:not(.browser-default),
+.form-testimonies input[type="url"]:not(.browser-default),
+.form-testimonies input[type="time"]:not(.browser-default),
+.form-testimonies input[type="date"]:not(.browser-default),
+.form-testimonies input[type="datetime"]:not(.browser-default),
+.form-testimonies input[type="datetime-local"]:not(.browser-default),
+.form-testimonies input[type="tel"]:not(.browser-default),
+.form-testimonies input[type="number"]:not(.browser-default),
+.form-testimonies input[type="search"]:not(.browser-default),
+.form-testimonies textarea,
+.form-testimonies select
+{
+    height: 2.5em;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 0 40px 0 12px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFF;
+    color: #1F2937;
+    font-size: 1em;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(16, 24, 40, 0.15);
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.15);
+}
+
+.form-testimonies textarea
+{
+    min-height: 100px;
+}
+
+
+.form-testimonies .popup
+{
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    background-color: white;
+    padding: 3rem;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #1F2937;
+}
+
+.form-testimonies .popup__close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.form-testimonies .popup h3
+{
+    font-size: 22px;
+    font-weight: 700;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-testimonies .popup strong
+{
+    font-weight: bold;
+}
+
+.form-testimonies .popup p
+{
+    margin-bottom: 10px;
+}
+
+.form-testimonies .form-btn
+{
+    height: 3em;
+    line-height: 28px;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: inherit;
+    margin-top: 20px;
+    border: 0;
+    background-color: #e2202a;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.form-testimonies .legal-text-link
+{
+    cursor: pointer;
+}
+
+.genericblock-footer
+{
+    width: 100%;
+}
+
+.genericblock-footer h3
+{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+
+/* testimonis */
+.testimoni-masonry
+{
+    display: block;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.testimoni-masonry .testimoni-item
+{
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1rem;
+
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+@media (min-width: 1200px)
+{
+    .testimoni-masonry .testimoni-item
+    {
+        width: 25%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 821px)
+{
+    .testimoni-masonry .testimoni-item
+    {
+        width: 33.33%;
+    }
+}
+
+@media (max-width: 820px) and (min-width: 677px)
+{
+    .testimoni-masonry .testimoni-item
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .testimoni-masonry .testimoni-item
+    {
+        width: 100%;
+    }
+}
+
+.testimoni-masonry .testimoni-item-wrapper
+{
+    background: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 .3rem 1.2rem 0 rgba(5, 10, 15, .05);
+    overflow: hidden;
+}
+
+.testimoni-masonry .testimoni-item-wrapper:not(.flip-card)
+{
+    padding: 1.5rem;
+}
+
+
+.testimoni-masonry .flip-card-inner
+{
+    position: relative;
+    display: block;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    height: 100%;
+    min-height: 350px;
+}
+
+.testimoni-masonry .flip-card:hover .flip-card-inner
+{
+    transform: rotateY(180deg);
+}
+
+.testimoni-masonry .flip-card-front
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+}
+
+.testimoni-masonry .flip-card-back
+{
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    padding: 1.5rem;
+    background: #fff;
+    overflow: visible;
+}
+
+.testimoni-link
+{
+    color: var(--e-global-color-primary);
+}
+
+.load-more-wrapper
+{
+    text-align: center;
+}
+
+.load-more
+{
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 0;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--e-global-color-primary) !important;
+    border-bottom: 1px solid var(--e-global-color-primary);
+    cursor: pointer;
+}
+
+.modal-bg
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content
+{
+    position: relative;
+    background: #fff;
+    padding: 1.5rem;
+    width: 800px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.modal-content .modal-content_row
+{
+    display: flex;
+    gap: 2rem;
+}
+
+.modal-content .testimoni-modal-img-wrapper
+{
+    width: 100%;
+    max-width: 250px;
+}
+
+.modal-content .testimoni-modal-title
+{
+    color: var(--e-global-color-primary);
+}
+
+.modal-content .testimoni-modal-img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.modal-content .testimoni-modal-button
+{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--e-global-color-primary);
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.modal-content .testimoni-modal-button:hover
+{
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.modal-content .testimoni-modal-content-wrapper
+{
+    width: calc(100% - 250px - 1rem);
+}
+
+.modal-content .testimoni-modal-type
+{
+    font-weight: 500;
+}
+
+.modal-content .modal-share
+{
+    margin-top: 2rem;
+}
+
+.modal-content .modal-share-title
+{
+    font-weight: 500;
+    margin-bottom: .2rem;
+}
+
+.modal-content .modal-share-buttons
+{
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.modal-content .modal-share-buttons a
+{
+    color: var(--e-global-color-primary);
+}
+
+.testimoni-modal-close
+{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--e-global-color-primary);
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px)
+{
+    .modal-content_row {
+        flex-direction: column;
+    }
+    .modal-content .testimoni-modal-img-wrapper
+    {
+        width: 100%;
+        max-width: 100%;
+    }
+    .modal-content .testimoni-modal-content-wrapper
+    {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+}
