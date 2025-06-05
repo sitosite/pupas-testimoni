@@ -148,8 +148,8 @@ function handle_testimoni_submission()
         'stic_Registrations___status',
         'stic_Registrations___attendees',
         'testimonial_type',
-        'Contacts___testimonial_c',
         'Contacts___testimoni_c',
+        'Contacts___testimonial_c',
         'Contacts___pph_acepta_legal_c'
     ];
 
