@@ -47,8 +47,7 @@ function custom_form_testimonies_shortcode($atts)
             <input type="hidden" id="stic_Payment_Commitments___periodicity" name="stic_Payment_Commitments___periodicity"
                 value="punctual" />
             <input type="hidden" id="language" name="language" value="es_ES" />
-            <input type="hidden" id="defParams" name="defParams"
-                value="%7B%22include_payment_commitment%22%3A0%2C%22include_organization%22%3A0%2C%22account_code_mandatory%22%3A0%2C%22include_registration%22%3A1%2C%22account_name_optional%22%3A0%2C%22email_template_id%22%3A%221e6c6e2e-c4f2-7f85-b8c7-6437dd4e1ad8%22%7D" />
+            <input id="defParams" type="hidden" name="defParams" value="%7B%22version%22%3A%222%22%2C%22email_template_id%22%3A%22<?php echo $email_template ?>%22%2C%22relation_type%22%3A%22%22%7D" />
             <input type="hidden" id="timeZone" name="timeZone" value="" />
 
             <!-- Campos ocults (estan després dels camps visibles en el original) // Esborrar en acabar -->
@@ -67,7 +66,7 @@ function custom_form_testimonies_shortcode($atts)
             <!-- Este campo se debe ocultar con el valor 1, simplemente es obligatório en el CRM pero no aporta información en este tipo de formularios -->
             <input type="hidden" id="stic_Registrations___attendees" name="stic_Registrations___attendees" value="1" />
             <!-- Identificacor CRM para indicar que son testimonios -->
-            <input type="hidden" name="Contacts___testimonial_c" value="1">
+            <input type="hidden" id="Contacts___testimonial_c" name="Contacts___testimonial_c" value="1"/>
 
             <!-- Camps visibles -->
             <div class="fields-row">
