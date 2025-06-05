@@ -6,10 +6,6 @@ Version: 1.0
 Author: mmkt
 */
 
-// if wpml is not active define ICL_LANGUAGE_CODE
-if (!defined('ICL_LANGUAGE_CODE')) {
-    define('ICL_LANGUAGE_CODE', 'ca');
-}
 
 //define plugin domain for translations
 function custom_form_testimonies_load_textdomain()
@@ -103,6 +99,8 @@ function handle_testimoni_submission()
         $max_size = 2 * 1024 * 1024; // 2MB
 
         if (filesize($uploaded['file']) > $max_size) {
+            // Esborrem el fitxer pujat
+            unlink($uploaded['file']);
             wp_redirect(esc_url_raw($_POST['redirect_ko_url']));
             exit;
         }
@@ -150,18 +148,21 @@ function handle_testimoni_submission()
         'stic_Registrations___status',
         'stic_Registrations___attendees',
         'testimonial_type',
+        'Contacts___testimonial_c',
         'Contacts___testimoni_c',
         'Contacts___pph_acepta_legal_c'
     ];
 
     foreach ($fields as $f) {
         if ($f === 'Contacts___pph_acepta_informacion_c') {
-            // Checkbox: enviar 1 o 0
             $crm_fields[$f] = isset($_POST[$f]) ? '1' : '0';
+        } elseif ($f === 'defParams' && isset($_POST[$f])) {
+            $crm_fields[$f] = trim($_POST[$f]); // sense sanititzar per no trencar el JSON codificat
         } elseif (isset($_POST[$f])) {
             $crm_fields[$f] = sanitize_text_field($_POST[$f]);
         }
     }
+
 
     $crm_response = wp_remote_post(
         'https://pallapupas.sinergiacrm.org/index.php?entryPoint=stic_Web_Forms_save',
