@@ -77,7 +77,7 @@ function testimoni_masonry_shortcode()
 
         <!-- BOTÓ VEURE'N MÉS / MENYS -->
         <div class="load-more-wrapper">
-            <a @click="toggleMore()" class="load-more" x-text="expanded ? `Veure'n menys` : `Veure'n més`"></a>
+            <a @click="toggleMore()" class="load-more" x-text="expanded ? `<?php _e('Veure\'n menys', 'custom-form-testimonies') ?>` : `<?php _e('Veure\'n més', 'custom-form-testimonies') ?>`"></a>
         </div>
 
 
